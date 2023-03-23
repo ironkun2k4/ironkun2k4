@@ -1,26 +1,17 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
+# Cloudmersive API credentials
+api_key: r0qgv93qsp803t6
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+# Source Dropbox folder information
+dropbox:
+  access_token: sl.BbGCvEiyxEkBf6bsMLHl-zZwheXj03TIc6am5ZyEn5M_ymc1QxTTuQtgaxyA2pR0_mZh32j846W90Q5s1bt9HY9RxZk29gktLvwV15HHHnH0SAX5xOXeIPAXVH0uUjlCnS-OmEAiLA
+  folder_path: /VS-AV%20Production/Audio%20Production/04%20Web%20Share/Approved/app%20share%20-%20vancouvermessages
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+# Destination SharePoint site and folder information
+sharepoint:
+  site_url: https://govolunteer.sharepoint.com/sites/SelfLearn495
+  folder_path: /sites/SelfLearn495/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FSelfLearn495%2FShared%20Documents%2FGeneral&viewid=35d1500f-557b-467d-b197-de47bf3a6edf
+
+# File transfer options
+transfer:
+  overwrite: true
+  delete_after_transfer: false
